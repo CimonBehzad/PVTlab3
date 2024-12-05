@@ -26,9 +26,14 @@ public class FindWord {
                 
                 String line = fileScanner.nextLine();
                 
-                if(line.contains(patternString)){
-                    System.out.println("Occurancek: " + n + " " + line + "\n");
-                    n++;
+                if (line.contains(patternString)) {
+                    String[] words = line.split(" ");
+                    for (String word : words) {
+                        if (word.equals(patternString)) {
+                            System.out.println("Occurrence: " + n + " " + line + "\n");
+                            n++;
+                        }
+                    }
                 }
                 
             }

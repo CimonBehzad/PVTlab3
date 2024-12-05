@@ -22,7 +22,10 @@ public class FindWord {
             Scanner fileScanner = new Scanner(file);
            
             int n = 0;
+            int linenr = 0;
             while (fileScanner.hasNextLine()) {
+                linenr++;
+
                 
                 String line = fileScanner.nextLine();
                 
@@ -30,7 +33,7 @@ public class FindWord {
                     String[] words = line.split(" ");
                     for (String word : words) {
                         if (word.equals(patternString)) {
-                            System.out.println("Occurrence: " + n + " " + line + "\n");
+                            System.out.println("Occurrence: "+ n + " " + "Line number:" + linenr + "\n" + line + "\n");
                             n++;
                         }
                     }
